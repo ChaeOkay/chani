@@ -7,7 +7,8 @@ end
 
 # takes get information, and creates new record in database
 post '/urls' do
-
+  @long = params[:long_url]
+  @short = Url.get_short(@long)
   erb :confirmation
 end
 
