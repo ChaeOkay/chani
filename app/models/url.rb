@@ -19,6 +19,10 @@ class Url < ActiveRecord::Base
     SecureRandom.hex(3) 
   end
 
+  def clicks
+     + 1
+  end 
+
   def self.get_short(long_url)
     url = self.find_by_long(long_url) 
     url = self.create(long: long_url) unless url.nil?
