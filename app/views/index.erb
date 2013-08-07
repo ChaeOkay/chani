@@ -1,4 +1,20 @@
-<div class="container">
-  <h2>Cha.ni</h2>
-  <h6>Life is too short</h6>
+<div class="form">
+  <h1>Cha.ni</h1>
+  <h3>Life is too short</h3>
+  <form action="/urls" method="post">
+    <label>Please enter a long URL:</label>
+    <br />
+    <input type="text" name="long_url">
+    <br />
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<div class="list">
+  <h3>Recently Used Shortcuts</h3>
+  <ul>
+  <% @shorts.each do |short| %>
+    <li><a href='/<%= short %>'><%= short %></a></li>
+  <% end %>
+  </ul>
 </div>

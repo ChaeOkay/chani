@@ -1,6 +1,7 @@
 # displays list of all short urls
 # provides form for creating a new entry (via long url input info)
 get '/' do
+  @shorts = Url.pluck(:short)
   erb :index
 end
 
