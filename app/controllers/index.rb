@@ -16,6 +16,7 @@ end
 # display long url page from single specific database entry
 get '/:short_url' do
   url = Url.find_by_short(params[:short_url])
-  new_click_count = url.click + 1
-  url.update(click: new_click_count)
+  new_click_count = url.clicks + 1
+  url.update_attribute(:clicks, new_click_count)
+  redirect "http://#{url.long}"
 end
