@@ -9,6 +9,7 @@ end
 post '/urls' do
   @long = params[:long_url]
   @short = Url.get_short(@long)
+  puts @short
   erb :confirmation
 end
 

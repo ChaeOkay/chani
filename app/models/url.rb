@@ -20,13 +20,8 @@ class Url < ActiveRecord::Base
   end
 
   def self.get_short(long_url)
-    puts long_url
-    # stopping point - debug here
-    url = self.find_by(long: long_url) 
-    puts url 
+    url = self.find_by_long(long_url) 
     url = self.create(long: long_url) unless url.nil?
-    puts url
     url.short
-    puts url.short
   end
 end
